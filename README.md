@@ -1,5 +1,4 @@
-# Algorithm 
-####(in python)
+# Algorithm (in python)
 
 ## hash
 ``` python

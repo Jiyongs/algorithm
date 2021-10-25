@@ -34,3 +34,17 @@ Counter(리스트)
 ```
 - return Counter({값1:건수, 값2:건수, ...})
 - 리스트 값들의 고유 값(set(리스트)) 별 건수를 반환
+
+``` python
+for a, b in [["a", "b"]]:
+    print(a, b)
+```
+- 이중리스트 안의 값 개수("a","b" : 2개)만큼 a,b 에 받아 옴
+- 이중리스트 안의 값 개수가 모두 같아야 
+- 이중리스트 안의 값 개수와 for문 다음에 오는 변수 개수가 같아야 함
+
+``` python
+from itertools import combinations
+combinations((리스트),조합개수)
+```
+- return 리스트 내 값으로 만들어지는 모든 조합 (순서고려 x, 중복 제거)

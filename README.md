@@ -9,13 +9,13 @@ if 값 in 리스트
 ``` python
 zip(리스트1, 리스트2)
 ```
-- return object( 리스트1[0], 리스트2[0] )
+- return object( 리스트1[0], 리스트2[0], ... )
 - object를 list, dict, tuple, set 등 으로 변환하여 사용
 
 ``` python
 dict(zip(리스트1, 리스트2))
 ```
-- return { 리스트1[0] : 리스트2[0] }
+- return { 리스트1[0] : 리스트2[0], ... }
 
 ``` python
 sorted(딕셔너리.items(), key=(lambda x: x[0]), reverse=True)

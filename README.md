@@ -9,13 +9,13 @@ if 값 in 리스트
 ``` python
 zip(리스트1, 리스트2)
 ```
-- return object( 리스트1[0], 리스트2[0] )
+- return object( 리스트1[0], 리스트2[0], ... )
 - object를 list, dict, tuple, set 등 으로 변환하여 사용
 
 ``` python
 dict(zip(리스트1, 리스트2))
 ```
-- return { 리스트1[0] : 리스트2[0] }
+- return { 리스트1[0] : 리스트2[0], ... }
 
 ``` python
 sorted(딕셔너리.items(), key=(lambda x: x[0]), reverse=True)
@@ -40,7 +40,7 @@ for a, b in [["a", "b"]]:
     print(a, b)
 ```
 - 이중리스트 안의 값 개수("a","b" : 2개)만큼 a,b 에 받아 옴
-- 이중리스트 안의 값 개수가 모두 같아야 
+- 이중리스트 안의 값 개수가 모두 같아야 함
 - 이중리스트 안의 값 개수와 for문 다음에 오는 변수 개수가 같아야 함
 
 ``` python
@@ -58,4 +58,4 @@ combinations((리스트),조합개수)
 변수 in 리스트
 변수 in 딕셔너리
 ```
-- element 존재 검사 시, list보다 set이나 dict 이 빠
+- element 존재 검사 시, list보다 set이나 dict 이 빠름

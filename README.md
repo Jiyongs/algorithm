@@ -48,3 +48,14 @@ from itertools import combinations
 combinations((리스트),조합개수)
 ```
 - return 리스트 내 값으로 만들어지는 모든 조합 (순서고려 x, 중복 제거)
+
+``` python
+문자열1.startswith(문자열2)
+```
+- return 문자열1이 문자열2로 시작하는지의 여부
+
+``` python
+변수 in 리스트
+변수 in 딕셔너리
+```
+- element 존재 검사 시, list보다 set이나 dict 이 빠

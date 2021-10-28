@@ -1,6 +1,6 @@
 
 # link : https://programmers.co.kr/learn/courses/30/lessons/42576?language=python3
-# my answer1 : 효율성 테스트 5개 시간초과
+# my answer1 : 효율성 테스트 4개 시간초과
 def solution1(participant, completion):
     participant.sort()
     completion.sort()

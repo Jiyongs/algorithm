@@ -113,3 +113,77 @@ def dfs_6(depth, n, m, start):
             visited[i] = False
 
 # dfs_6(0, n, m, 0)
+
+# n 과 m (7)
+# 무작위로 주어진 n가지 자연수로 구성된 길이가 m인 수열 # 모든 경우의 수 # 같은 수 다중사용 가능 # 오름차순
+numbers.sort()
+visited = [False] * n
+def dfs_7(depth, n, m):
+    if depth == m:
+        print(' '.join(map(str, answer)))
+        return
+    for i in range(n):
+        visited[i] = True
+        answer.append(numbers[i])
+        dfs_7(depth+1, n, m)
+        answer.pop()
+        visited[i] = False
+
+# dfs_7(0, n, m)
+
+# n 과 m (8)
+# 무작위로 주어진 n가지 자연수로 구성된 길이가 m인 수열 # 모든 경우의 수 # 같은 수 다중사용 가능 # 비내림차순
+numbers.sort()
+visited = [False] * n
+def dfs_8(depth, n, m, before):
+    if depth == m:
+        print(' '.join(map(str, answer)))
+        return
+    for i in range(n):
+        if before <= numbers[i]:
+            visited[i] = True
+            answer.append(numbers[i])
+            dfs_8(depth+1, n, m, numbers[i])
+            answer.pop()
+            visited[i] = False
+
+# dfs_8(0, n, m, numbers[0])
+
+# n 과 m (9)
+# 무작위로 주어진 n가지 자연수로 구성된 길이가 m인 수열 # 모든 경우의 수 # 같은 수 다중사용 안 함 # 오름차순 # 같은 자연수가 2개 이상 주어질 수 있음
+numbers.sort()
+visited = [False] * n
+answer_list = []
+# 시간초과
+def dfs_9_timeout(depth, n, m):
+    if depth == m:
+        if str(answer) not in answer_list:
+            answer_list.append(str(answer.copy()))
+            print(' '.join(map(str, answer)))
+        return
+    for i in range(n):
+        if visited[i] is not True:
+            visited[i] = True
+            answer.append(numbers[i])
+            dfs_9_timeout(depth+1, n, m)
+            answer.pop()
+            visited[i] = False
+
+# 시간통과
+numbers.sort()
+visited = [False] * n
+def dfs_9(depth, n, m):
+    if depth == m:
+        print(' '.join(map(str, answer)))
+        return
+    temp = 0
+    for i in range(n):
+        if visited[i] is not True and temp != numbers[i]:
+            visited[i] = True
+            answer.append(numbers[i])
+            temp = numbers[i]
+            dfs_9(depth+1, n, m)
+            answer.pop()
+            visited[i] = False
+
+# dfs_9(0, n, m)

@@ -207,3 +207,23 @@ def dfs_10(depth, n, m, start, before):
             visited[i] = False
 
 # dfs_10(0, n, m, 0, numbers[0])
+
+# n 과 m (11)
+# 무작위로 주어진 n가지 자연수로 구성된 길이가 m인 수열 # 모든 경우의 수 # 같은 수 다중사용 가능 # 오름차순 # 같은 자연수가 2개 이상 주어질 수 있음
+numbers.sort()
+visited = [False] * n
+def dfs_11(depth, n, m):
+    if depth == m:
+        print(' '.join(map(str, answer)))
+        return
+    temp = 0
+    for i in range(n):
+        if temp != numbers[i]:
+            visited[i] = True
+            answer.append(numbers[i])
+            temp = numbers[i]
+            dfs_11(depth+1, n, m)
+            answer.pop()
+            visited[i] = False
+
+# dfs_11(0, n, m)

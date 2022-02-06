@@ -47,7 +47,7 @@ def dfs_3():
         dfs_3()
         answer.pop()
 
-# dfs_2()
+# dfs_3()
 
 # n 과 m (4)
 # 모든 경우의 수 # 같은 수 다중사용 가능 # 비내림차순
@@ -162,7 +162,7 @@ def dfs_9_timeout(depth, n, m):
             print(' '.join(map(str, answer)))
         return
     for i in range(n):
-        if visited[i] is not True:
+        if not visited[i]:
             visited[i] = True
             answer.append(numbers[i])
             dfs_9_timeout(depth+1, n, m)
@@ -178,7 +178,7 @@ def dfs_9(depth, n, m):
         return
     temp = 0
     for i in range(n):
-        if visited[i] is not True and temp != numbers[i]:
+        if not visited[i] and temp != numbers[i]:
             visited[i] = True
             answer.append(numbers[i])
             temp = numbers[i]
@@ -187,3 +187,23 @@ def dfs_9(depth, n, m):
             visited[i] = False
 
 # dfs_9(0, n, m)
+
+# n 과 m (10)
+# 무작위로 주어진 n가지 자연수로 구성된 길이가 m인 수열 # 구성이 겹치지 않는 경우의 수 # 같은 수 다중사용 안 함 # 비내림차순 # 같은 자연수가 2개 이상 주어질 수 있음
+numbers.sort()
+visited = [False] * n
+def dfs_10(depth, n, m, start, before):
+    if depth == m:
+        print(' '.join(map(str, answer)))
+        return
+    temp = 0
+    for i in range(start, n):
+        if not visited[i] and before <= numbers[i] and temp != numbers[i]:
+            visited[i] = True
+            answer.append(numbers[i])
+            temp = numbers[i]
+            dfs_10(depth+1, n, m, i+1, numbers[i])
+            answer.pop()
+            visited[i] = False
+
+# dfs_10(0, n, m, 0, numbers[0])

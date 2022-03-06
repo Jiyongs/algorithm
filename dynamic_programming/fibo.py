@@ -17,7 +17,7 @@ def fibo(x):
     d[x] = fibo(x-1)+fibo(x-2)
     return d[x]
 
-# 반복문 (버텀업 방식)
+# 반복문 (보텀업 방식)
 d = [0] * 100
 def fibo(x):
     d[1] = 1
